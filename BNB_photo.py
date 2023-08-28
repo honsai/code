@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import re
 
 # Load the CSV file
-data_all_groups = pd.read_csv("C:/Users/ylhk/Desktop/BNB_token_transfers_per_group.csv")  # Replace with your actual path
+data_all_groups = pd.read_csv("C:/BNB_token_transfers_per_group.csv")  # Replace with your actual path
 
 pattern = r'from:\s*"(?P<from_address>0x[a-fA-F0-9]+)".*to:\s*"(?P<to_address>0x[a-fA-F0-9]+)"'
 
