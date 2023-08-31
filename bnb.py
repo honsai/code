@@ -28,7 +28,7 @@ def find_related_addresses_thread_bsc(addresses, api_key, result_container):
     for address in addresses:
         transactions = get_transactions_bsc(address, api_key)
         for tx in transactions:
-            if tx["from"] in addresses and tx["to"] in addresses and tx["from"] != tx["to"]:
+            if tx["from"] in addresses and tx["to"] in addresses and tx["from"] != tx["to"] and tx["input"] == "0x":
                 pair = tuple(sorted([tx["from"], tx["to"]]))
                 related_pairs.add(pair)
     result_container.extend(related_pairs)
