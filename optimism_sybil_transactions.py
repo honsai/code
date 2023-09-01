@@ -59,7 +59,7 @@ for index, group in enumerate(groups, start=1):
                 continue
             # Add current transaction hash to the seen_hashes set
             seen_hashes.add(tx["hash"])
-            if tx["from"] in addresses and tx["to"] in addresses and tx["from"] != tx["to"]:
+            if tx["from"] in addresses and tx["to"] in addresses and tx["from"] != tx["to"] and tx["input"] == "0x":
                 transfer_str = (f'hash: "{tx["hash"]}" from: "{tx["from"]}" to: "{tx["to"]}" '
                                 f'tokenSymbol: "ETH" value: "{int(tx["value"]) / (10 ** 18)}"')
                 group_token_transfers[index].append(transfer_str)
